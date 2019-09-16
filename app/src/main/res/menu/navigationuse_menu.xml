@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!-- 注意，要想关联跳转，必须将item的id与要跳转的action 的名称相同   -->
+    <item android:id="@id/action_fristFragment_to_secondFragment"
+        android:icon="@drawable/ic_settings_black_18dp"
+        android:menuCategory="secondary"
+        app:showAsAction="always"
+        android:title="@string/setting"></item>
+</menu>

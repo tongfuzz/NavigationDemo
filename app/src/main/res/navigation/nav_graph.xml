@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fristFragment">
+
+    <fragment
+        android:id="@+id/fristFragment"
+        android:name="com.kk.tongfu.navigationdemo.FristFragment"
+        android:label="fragment_frist"
+        tools:layout="@layout/fragment_frist" >
+        <action
+            android:id="@+id/action_fristFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_fristFragment_to_thridFragment"
+            app:destination="@id/thridFragment" />
+        <action
+            android:id="@+id/action_fristFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.kk.tongfu.navigationdemo.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment_to_thridFragment"
+            app:destination="@id/thridFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/thridFragment"
+        android:name="com.kk.tongfu.navigationdemo.ThridFragment"
+        android:label="fragment_thrid"
+        tools:layout="@layout/fragment_thrid" >
+        <argument
+            android:name="info"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+        <action android:id="@+id/action_thridFragment_pop"
+            app:popUpTo="@id/fristFragment"></action>
+        <action android:id="@+id/action_thridFragment_to_firstFragment"
+            app:destination="@id/fristFragment"></action>
+    </fragment>
+
+    <action android:id="@+id/action_global_secondFragment" app:destination="@id/secondFragment" />
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.kk.tongfu.navigationdemo.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <argument
+            android:name="number"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="text"
+            app:argType="string"
+            app:nullable="false"
+            />
+        <argument
+            android:name="userInfo"
+            app:argType="com.kk.tongfu.navigationdemo.beans.UserInfo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+
+</navigation>
